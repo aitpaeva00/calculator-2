@@ -47,15 +47,13 @@ public class Calculator {
             throw new IllegalArgumentException("Error: Invalid input format");
         }
     }
-
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Calculator!");
+        System.out.println("Welcome to the Java Calculator!");
 
         while (true) {
-            System.out.print("Please enter your arithmetic expression: ");
-            String input = scanner.nextLine().replaceAll("\\s", ""); // Убираем пробелы
+            System.out.print("Enter operation (or type 'exit' to quit): ");
+            String input = scanner.nextLine().replaceAll("\\s", "");
 
             if (input.equalsIgnoreCase("exit")) {
                 System.out.println("Goodbye!");
@@ -66,18 +64,24 @@ public class Calculator {
                 double result = evaluate(input);
                 System.out.println("Result: " + result);
 
-                System.out.print("Do you want to continue? (y/n): ");
-                String continueInput = scanner.nextLine().toLowerCase();
-                if (continueInput.equals("n")) {
-                    System.out.println("Thank you for using the Calculator!");
-                    break;
+                while (true) {
+                    System.out.print("Do you want to continue? (y/n): ");
+                    String continueInput = scanner.nextLine().toLowerCase();
+
+                    if (continueInput.equals("y")) {
+                        break;
+                    } else if (continueInput.equals("n")) {
+                        System.out.println("Thank you for using the Calculator!");
+                        scanner.close();
+                        return;
+                    } else {
+                        System.out.println("Invalid input. Try again!");
+                    }
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
-
-        scanner.close();
     }
 
 
