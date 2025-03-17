@@ -1,5 +1,8 @@
  **Calculator Project Documentation**
 
+<img width="636" alt="Снимок экрана 2025-03-17 в 07 39 54" src="https://github.com/user-attachments/assets/8e2d7e71-df4d-4fa2-9b69-b023e4e7f133" />
+
+
  **Project Overview**
 This project is a command-line calculator in Java that supports basic arithmetic operations (addition, subtraction, multiplication, division) and advanced functions like square root (`sqrt`), absolute value (`abs`), and rounding (`round`). The calculator also handles parentheses and maintains a history of calculations. 
 
